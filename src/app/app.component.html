@@ -1,0 +1,7 @@
+<input hidden type="text" #dataIn [(ngModel)]="inData">
+<li hidden *ngFor="let location of listOfCities" (click)="inData=location.LocalizedName">{{location.LocalizedName}}</li>
+<p>Input in parent</p>
+<input [(ngModel)]="inputShare" (input)="service.changeObservableData(inputShare)" name="input" type="text">
+<button (click)="service.changeObservableData(inputShare)">Submit</button>
+<p>This is the child component</p>
+<app-child></app-child>
